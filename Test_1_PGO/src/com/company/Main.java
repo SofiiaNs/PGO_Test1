@@ -27,5 +27,6 @@ public class Main {
         pol1.addPartner(pol3);
         Vasiliy.ShowPartner();
         pol1.ShowPartner();
+        System.out.println( "active police: "+ policeman.getNum_of_active_police());
     }
 }

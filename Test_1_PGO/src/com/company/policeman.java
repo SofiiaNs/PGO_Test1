@@ -18,6 +18,7 @@ public class policeman {
         this.LastName = lastName;
         this.Login = login;
         this.Active = false;
+        num_Of_all_police= num_Of_all_police +1;
     }
           public void Дежурство() {
           if (this.Active == true) {
@@ -30,12 +31,14 @@ public class policeman {
          Active = false;
 
          this.Active = Active;
-         num_of_active_police -= 1;
+         num_of_active_police = num_of_active_police -1;
        }
+
+
          public void Back_to_дежурство() {
          Active = true;
          this.Active = Active;
-         num_of_active_police+= 1;
+        num_of_active_police = num_of_active_police+1 ;
         }
     public void setLastName(String lastName) {
         this.LastName = lastName;
@@ -50,17 +53,17 @@ public class policeman {
     }
             public void ShowPartner() {
             for (int i = 0; i < PartnerList.size(); i++) {
-            System.out.println("partner  :   " + ((PartnerList.get(i).toString()))+" ");
+            System.out.println("partner of " + Name+ "  :   " + ((PartnerList.get(i).toString()))+" ");
         }
     }
     @Override
     public String toString() {
-        return "policeman{" + "PartnerList=" + PartnerList + this.Name+ "   "+this.LastName + '}';
+        return  this.Name+ "   "+this.LastName ;
     }
 
-
-
-
+    public static int getNum_of_active_police() {
+        return num_of_active_police;
+    }
 
 }
 
